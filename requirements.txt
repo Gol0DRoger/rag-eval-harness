@@ -1,0 +1,16 @@
+# Backend
+fastapi
+uvicorn[standard]
+python-dotenv
+openai            # used as the client for Groq's OpenAI-compatible API
+logfire[fastapi]
+qdrant-client
+
+# Embeddings and PDF loading
+sentence-transformers
+llama-index-core
+llama-index-readers-file
+
+# UI and evaluation script
+streamlit
+requests

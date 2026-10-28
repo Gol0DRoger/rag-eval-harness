@@ -1,0 +1,21 @@
+# --- Secrets (never commit these) ---
+.env
+.logfire/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# --- Data and generated files ---
+qdrant_storage/
+uploads/
+eval_results/
+*.pdf
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
