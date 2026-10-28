@@ -38,6 +38,7 @@ flowchart LR
 ```
 
 **Ingest:** the PDF is split into overlapping chunks, each chunk is embedded locally with `BAAI/bge-small-en-v1.5`, and the vectors are stored in Qdrant.
+
 **Query:** the question is embedded, the closest chunks are retrieved, and the LLM answers using only those chunks.
 
 ## Tech stack
