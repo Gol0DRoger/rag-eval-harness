@@ -89,17 +89,6 @@ Open http://localhost:8501, upload a PDF, wait for "Ingested N chunks", then ask
 
 **Logfire (optional):** run `logfire auth` and `logfire projects new` to send traces to your dashboard. Without it, the app still works and prints traces in the terminal.
 
-## API
-
-| Method | Endpoint | Purpose |
-|---|---|---|
-| POST | `/api/ingest` | Start a background ingestion job, returns a `run_id` |
-| GET | `/api/runs/{run_id}` | Check job status (Queued, Running, Completed, Failed) |
-| POST | `/api/query` | Answer a question: `{ "question": "...", "top_k": 10 }` |
-| POST | `/api/clear` | Delete all stored documents |
-
-Interactive docs are available at http://127.0.0.1:8000/docs.
-
 ## Evaluation
 
 `eval.py` sends a fixed set of questions to the running backend and reports:
