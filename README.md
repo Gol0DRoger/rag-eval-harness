@@ -14,11 +14,16 @@ Ask questions about your PDFs and get answers grounded in the document, with sou
 - **Evaluation**: `eval.py` measures retrieval quality, answer correctness, refusal behaviour and latency, and compares each run with the last
 - **One-click reset** to clear all stored documents and start fresh
 
-## Screenshots
+## Working (Screenshots)
 
-| Streamlit UI | Logfire trace |
-|---|---|
-| ![UI](docs/streamlit-ui.png) | ![Trace](docs/logfire-trace.png) |
+
+
+https://github.com/user-attachments/assets/1ea19754-77f4-4e0e-b8c4-260e33643e8c
+
+<img width="950" height="437" alt="Screenshot 2026-10-28 110609" src="https://github.com/user-attachments/assets/f4be67e7-2bbf-4508-a1c8-af3c2ab4886a" />
+
+<img width="959" height="481" alt="Screenshot 2026-10-28 105904" src="https://github.com/user-attachments/assets/0da77620-6c1a-4ad3-bf1f-411ec03401a8" />
+
 
 ## Architecture
 
