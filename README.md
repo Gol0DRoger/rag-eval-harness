@@ -71,7 +71,12 @@ copy .env.example .env         # macOS/Linux: cp .env.example .env
 # then open .env and set GROQ_API_KEY
 
 # 4. Start Qdrant
-docker compose up -d
+docker compose up -d 
+
+OR 
+
+ PowerShell:
+docker run -d -p 6333:6333 -v "${PWD}/qdrant_storage:/qdrant/storage" qdrant/qdrant
 
 # 5. Start the backend (terminal 1)
 uvicorn main:app --reload
@@ -112,12 +117,13 @@ Interactive docs are available at http://127.0.0.1:8000/docs.
 ```bash
 python eval.py                 # keyword checks, 10 questions
 python eval.py --judge         # also grade answers with an LLM
-python eval.py --top-k 5 --fail-under 0.8
+python eval.py --top-k 10 --delay 5.0
+python eval.py --top-k 10 --judge --delay 5.0
 ```
 
 Results are saved to `eval_results/` and compared with the previous run, so every prompt, model or chunking change gets a before-and-after number. The script exits with code 1 if the pass rate falls below `--fail-under`, so it can gate a CI pipeline.
 
-The sample dataset `eval_set_sapiens.json` is written for *Sapiens* by Yuval Noah Harari. The book is copyrighted and **not included**; ingest your own copy to reproduce the results, or write a new dataset in the same format for your own documents.
+The sample dataset `eval_set_sapiens.json` is written for *Sapiens* book by Yuval Noah Harari. The book is copyrighted and **not included**; ingest your own copy to reproduce the results, or write a new dataset in the same format for your own documents.
 
 **First baseline** (`top_k=10`, Groq free tier): overall pass rate 0.80, context recall 0.79, MRR 0.46, false-refusal rate 0.00, correct-refusal rate 0.67.
 
